@@ -14,7 +14,7 @@ def generate_random_matrix(rows, cols, matrix_name):
     matrix = []
     print(f"\nGenerowanie losowych wartości dla macierzy {matrix_name}...")
     for i in range(rows):
-        row = [random.uniform(1, 100) for _ in range(cols)]  # Generuje wartości losowe w zakresie od 1 do 100
+        row = [random.uniform(1, 100) for _ in range(cols)]  
         matrix.append(row)
     return matrix
 def print_matrix(matrix, name):
@@ -27,9 +27,9 @@ def multiply_matrices(matrix_a, matrix_b):
         print("Macierze mają niewłaściwe wymiary do mnożenia!")
         return None
     result = [[0 for _ in range(len(matrix_b[0]))] for _ in range(len(matrix_a))]
-    for i in range(len(matrix_a)):  # Iteracja przez wiersze macierzy A
-        for j in range(len(matrix_b[0])):  # Iteracja przez kolumny macierzy B
-            for k in range(len(matrix_b)):  # Iteracja przez wiersze macierzy B
+    for i in range(len(matrix_a)):
+        for j in range(len(matrix_b[0])):
+            for k in range(len(matrix_b)):
                 result[i][j] += matrix_a[i][k] * matrix_b[k][j]
     return result
 def main():
